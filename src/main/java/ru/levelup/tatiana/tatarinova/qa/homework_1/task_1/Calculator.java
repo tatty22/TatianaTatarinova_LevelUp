@@ -1,49 +1,49 @@
 package ru.levelup.tatiana.tatarinova.qa.homework_1.task_1;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Calculator {
+    static double num1 = 0;
+    static double num2 = 0;
+    static String operation;
 
     public static void main(String[] args) throws IOException {
         Calculator calculator = new Calculator();
         calculator.startCalc();
     }
 
-    public void startCalc() throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println("Выберите операцию: +, -, *, возведение в степень exp, вычисление факториала fact, вычисление числа Фибонначи fib");
-        String operation = reader.readLine();
+    public void startCalc() {
+
+        CalculatorInterface.input();
 
         switch (operation) {
             case "+" : {
-                Addition.add();
+                CalculatorInterface.printResult(new Addition().add(num1,num2));
             }
             break;
             case "-" : {
-                Subtraction.subtract();
+                CalculatorInterface.printResult(new Subtraction().subtract((int)num1,(int)num2));
             }
             break;
             case "*" : {
-                Multiplication.multiply();
+                CalculatorInterface.printResult(new Multiplication().multiply(num1,num2));
             }
             break;
             case "exp" : {
-                Exponentiation.exponentiate();
+                CalculatorInterface.printResult(new Exponentiation().exponentiate((int)num1,num2));
             }
             break;
             case "fact" : {
-                Factorial.factorize();
+                CalculatorInterface.printResult(new Factorial().factorize((int) num1));
             }
             break;
             case "fib" : {
-                Fibonachi.findFibonachi();
+                CalculatorInterface.printResult(new Fibonachi().findFibonachi((int) num1));
             }
             break;
-            default:
-                System.out.println("Вы ввели некорректную операцию;)");
         }
     }
     }

@@ -37,16 +37,18 @@ public class CalculatorInterface {
                     Calculator.num1 = in.nextInt();
                 }
                 break;
-                default:
-                    System.out.println("Вы ввели некорректную операцию;)");
+                default: {
+                    System.out.println("Вы ввели некорректную операцию. Попробуйте еще раз;)");
+                    input();
+                }
             }
         }
         catch (NumberFormatException e) {
-            System.out.println("Вы ввели число в некорректном формате. Попробуйте еще раз.");
+            System.out.println("Вы ввели число в некорректном формате. Попробуйте еще раз;)");
             input();
         }
         catch (InputMismatchException e) {
-            System.out.println("Вы ввели число в некорректном формате. Попробуйте еще раз!");
+            System.out.println("Вы ввели число в некорректном формате. Попробуйте еще раз!;)");
             input();
         }
     }

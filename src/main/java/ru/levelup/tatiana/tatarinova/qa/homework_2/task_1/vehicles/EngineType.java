@@ -1,4 +1,4 @@
 package ru.levelup.tatiana.tatarinova.qa.homework_2.task_1.vehicles;
 
-public abstract class Bus implements Vehicle{
+public enum EngineType { ELECTRIC, BENZINE, DIESEL, GAS
 }

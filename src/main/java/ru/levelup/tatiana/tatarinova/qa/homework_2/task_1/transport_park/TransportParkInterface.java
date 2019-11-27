@@ -47,7 +47,8 @@ public class TransportParkInterface {
         Collections.sort(vehicles, fuelConsumption);
         int i  = Collections.binarySearch(vehicles,new FordBus(7.3,3100,2018,1001),fuelConsumption);
 
-        System.out.println("Найдем машины с расходом топлива 7.3 и/или стоимостью 5500: ");
+        System.out.println("Найдем машины с расходом топлива 7.3 или стоимостью 4200: ");
+        System.out.println();
         System.out.println(vehicles.get(i).getClass().getSimpleName() + vehicles.get(i).toString());
 
         Collections.sort(vehicles, cost);

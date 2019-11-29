@@ -3,13 +3,10 @@ package ru.levelup.tatiana.tatarinova.qa.homework_2.task_1.vehicles.bus;
 public class YutongBus extends Bus {
 
 
-    public YutongBus(double fuelConsumption, int cost, int issueYear, int orderNumber) {
-        fuelType = FuelType.BENZINE;
-        disabledAccess = true;
+    public YutongBus(int orderNumber, double fuelConsumption, int cost, int issueYear) {
 
-        this.orderNumber = orderNumber;
-        this.fuelConsumption = fuelConsumption;
-        this.cost = cost;
-        this.issueYear = issueYear;
+        super(orderNumber,fuelConsumption,cost,issueYear);
+        fuelType = FuelType.BENZINE;
+        setDisabledAccess(true);
     }
 }

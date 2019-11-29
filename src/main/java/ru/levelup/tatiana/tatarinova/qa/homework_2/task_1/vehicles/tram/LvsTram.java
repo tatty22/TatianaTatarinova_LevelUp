@@ -2,13 +2,9 @@ package ru.levelup.tatiana.tatarinova.qa.homework_2.task_1.vehicles.tram;
 
 public class LvsTram extends Tram {
 
-    public LvsTram(double fuelConsumption, int cost, int issueYear, int orderNumber) {
-        super();
-        disabledAccess = false;
+    public LvsTram(int orderNumber, double fuelConsumption, int cost, int issueYear) {
 
-        this.orderNumber = orderNumber;
-        this.fuelConsumption = fuelConsumption;
-        this.cost = cost;
-        this.issueYear = issueYear;
+        super(orderNumber,fuelConsumption,cost,issueYear);
+        setDisabledAccess(false);
     }
 }

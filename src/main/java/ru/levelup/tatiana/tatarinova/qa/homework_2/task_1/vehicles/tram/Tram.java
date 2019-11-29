@@ -5,7 +5,9 @@ import ru.levelup.tatiana.tatarinova.qa.homework_2.task_1.vehicles.Vehicle;
 
 public abstract class Tram extends Vehicle implements Moveable {
 
-    public Tram() {
+    public Tram(int orderNumber, double fuelConsumption, int cost, int issueYear) {
+
+        super(orderNumber,fuelConsumption,cost,issueYear);
         fuelType = FuelType.ELECTRICITY;
     }
 

@@ -17,11 +17,11 @@ public class TransportPark {
 
         TransportPark transportPark = new TransportPark();
 
-        transportPark.vehicles.add(new FordBus(10.4,4100,2016,1001));
-        transportPark.vehicles.add(new VolgaBus(24.1,7000,2018,1002));
-        transportPark.vehicles.add(new Trollza(4.6,3500,2019,3002));
-        transportPark.vehicles.add(new AvantoTram(7.3,5500,2017,2001));
-        transportPark.vehicles.add(new NordTroll(5.2,4200,2018,3001));
+        transportPark.vehicles.add(new FordBus(1001, 10.4,4100,2016));
+        transportPark.vehicles.add(new VolgaBus(1002,24.1,7000,2018));
+        transportPark.vehicles.add(new Trollza(3002,4.6,3500,2019));
+        transportPark.vehicles.add(new AvantoTram(2001,7.3,5500,2017));
+        transportPark.vehicles.add(new NordTroll(3001,5.2,4200,2018));
 
         System.out.println("Создаем автопарк: ");
         TransportParkInterface.printTransportPark(vehicles);

@@ -5,7 +5,9 @@ import ru.levelup.tatiana.tatarinova.qa.homework_2.task_1.vehicles.Vehicle;
 
 public abstract class TrolleyBus extends Vehicle implements Moveable {
 
-    public TrolleyBus() {
+    public TrolleyBus(int orderNumber, double fuelConsumption, int cost, int issueYear) {
+
+        super(orderNumber,fuelConsumption,cost,issueYear);
         fuelType = FuelType.ELECTRICITY;
     }
 

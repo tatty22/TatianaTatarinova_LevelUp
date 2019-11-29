@@ -8,8 +8,13 @@ public class SortbyFuelConsumption implements Comparator<Vehicle> {
 
     @Override
     public int compare(Vehicle o1, Vehicle o2) {
-        if (o1.fuelConsumption < o2.fuelConsumption) return 1;
-        if (o1.fuelConsumption > o2.fuelConsumption) return -1;
+        if (o1.getFuelConsumption() < o2.getFuelConsumption()) {
+            return 1;
+        }
+        if (o1.getFuelConsumption() > o2.getFuelConsumption()) {
+            return -1;
+        }
+
         return 0;
     }
 }

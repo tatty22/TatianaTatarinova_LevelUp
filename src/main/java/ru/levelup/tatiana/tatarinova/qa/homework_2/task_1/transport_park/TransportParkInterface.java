@@ -15,7 +15,7 @@ public class TransportParkInterface {
         int cost = 0;
 
         for (Vehicle v : vehicles) {
-            cost =cost + v.cost;
+            cost =cost + v.getCost();
         }
 
         System.out.println("Общая стоимость автопарка: " + cost + " евро.");
@@ -45,14 +45,14 @@ public class TransportParkInterface {
         SortbyCost cost = new SortbyCost();
 
         Collections.sort(vehicles, fuelConsumption);
-        int i  = Collections.binarySearch(vehicles,new FordBus(7.3,3100,2018,1001),fuelConsumption);
+        int i  = Collections.binarySearch(vehicles,new FordBus(1001,7.3,3100,2018),fuelConsumption);
 
         System.out.println("Найдем машины с расходом топлива 7.3 или стоимостью 4200: ");
         System.out.println();
         System.out.println(vehicles.get(i).getClass().getSimpleName() + vehicles.get(i).toString());
 
         Collections.sort(vehicles, cost);
-        int j = Collections.binarySearch(vehicles,new FordBus(7.3,4200,2018,1001),cost);
+        int j = Collections.binarySearch(vehicles,new FordBus(1001,7.3,4200,2018),cost);
         System.out.println(vehicles.get(j).getClass().getSimpleName() + vehicles.get(j).toString());
     }
 }

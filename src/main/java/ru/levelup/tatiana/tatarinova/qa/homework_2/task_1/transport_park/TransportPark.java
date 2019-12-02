@@ -19,18 +19,18 @@ public class TransportPark {
 
         transportPark.vehicles.add(new FordBus(1001, 10.4,4100,2016));
         transportPark.vehicles.add(new VolgaBus(1002,24.1,7000,2018));
-        transportPark.vehicles.add(new Trollza(3002,4.6,3500,2019));
+        transportPark.vehicles.add(new Trollza(3002,7.3,5500,2019));
         transportPark.vehicles.add(new AvantoTram(2001,7.3,5500,2017));
         transportPark.vehicles.add(new NordTroll(3001,5.2,4200,2018));
 
-        System.out.println("Создаем автопарк: ");
+        System.out.print("Создаем автопарк: ");
         TransportParkInterface.printTransportPark(vehicles);
 
         TransportParkInterface.calculateCost(vehicles);
 
         TransportParkInterface.sortbyFuelConsumption(vehicles);
 
-        TransportParkInterface.searchbyParameters(vehicles);
+        TransportParkInterface.searchbyParameter(vehicles,7.3,5500);
 
     }
 }

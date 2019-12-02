@@ -8,7 +8,7 @@ public class VolgaBus extends Bus {
     public VolgaBus(int orderNumber, double fuelConsumption, int cost, int issueYear) {
 
         super(orderNumber,fuelConsumption,cost,issueYear);
-        fuelType = FuelType.GAS;
+        setFuelType(FuelType.GAS);
         setDisabledAccess(true);
     }
 }

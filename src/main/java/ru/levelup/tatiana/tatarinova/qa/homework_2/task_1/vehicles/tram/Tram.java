@@ -8,7 +8,7 @@ public abstract class Tram extends Vehicle implements Moveable {
     public Tram(int orderNumber, double fuelConsumption, int cost, int issueYear) {
 
         super(orderNumber,fuelConsumption,cost,issueYear);
-        fuelType = FuelType.ELECTRICITY;
+        setFuelType(FuelType.ELECTRICITY);
     }
 
     @Override

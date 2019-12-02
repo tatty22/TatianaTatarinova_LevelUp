@@ -7,7 +7,7 @@ public class FordBus extends Bus {
     public FordBus(int orderNumber, double fuelConsumption, int cost, int issueYear) {
 
         super(orderNumber,fuelConsumption,cost,issueYear);
-        fuelType = FuelType.DIESEL;
+        setFuelType(FuelType.DIESEL);
         setDisabledAccess(false);
     }
 }

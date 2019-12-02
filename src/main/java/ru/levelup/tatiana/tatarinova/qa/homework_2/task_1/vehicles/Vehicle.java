@@ -4,7 +4,7 @@ public abstract class Vehicle implements Moveable{
     public enum FuelType { ELECTRICITY, BENZINE, DIESEL, GAS
     }
     private int orderNumber;           // порядковый номер
-    protected static FuelType fuelType;  // тип топлива
+    private static FuelType fuelType;  // тип топлива
     private double fuelConsumption;    // расход топлива
     private int cost;                 // цена
     private int issueYear;          // год выпуска
@@ -20,18 +20,13 @@ public abstract class Vehicle implements Moveable{
     @Override
     public String toString() {
 
-        return "  номер: " + orderNumber + "  расход топлива: " + fuelConsumption + "  стоимость: " + cost + " евро  год выпуска: " + issueYear;
-
-        /*
-        return "Vehicle{" +
+        return " {" +
                 "orderNumber=" + orderNumber +
                 ", fuelConsumption=" + fuelConsumption +
                 ", cost=" + cost +
                 ", issueYear=" + issueYear +
                 ", disabledAccess=" + disabledAccess +
                 '}';
-
-         */
     }
 
     public int getOrderNumber() {

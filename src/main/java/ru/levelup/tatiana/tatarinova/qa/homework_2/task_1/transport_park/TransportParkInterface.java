@@ -1,13 +1,9 @@
 package ru.levelup.tatiana.tatarinova.qa.homework_2.task_1.transport_park;
 
 import ru.levelup.tatiana.tatarinova.qa.homework_2.task_1.vehicles.Vehicle;
-import ru.levelup.tatiana.tatarinova.qa.homework_2.task_1.vehicles.bus.Bus;
-import ru.levelup.tatiana.tatarinova.qa.homework_2.task_1.vehicles.bus.FordBus;
-import ru.levelup.tatiana.tatarinova.qa.homework_2.task_1.vehicles.bus.VolgaBus;
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
+
 
 public class TransportParkInterface {
 
@@ -25,7 +21,7 @@ public class TransportParkInterface {
 
         System.out.println();
         for (Vehicle v : vehicles) {
-            System.out.println(v.getClass().getSimpleName() + v.toString());
+            System.out.println(v.getClass().getSimpleName() + v);
         }
         System.out.println();
     }
@@ -34,25 +30,17 @@ public class TransportParkInterface {
 
         Collections.sort(vehicles, new SortbyFuelConsumption());
         System.out.println();
-        System.out.println("Сортируем машины парка по расходу топлива: ");
+        System.out.print("Сортируем машины парка по расходу топлива: ");
         printTransportPark(vehicles);
     }
 
-    // Поиск по заданным параметрам, для простоты считаем, что в автопарке нет машин с одинаковыми параметрами.
-    static void searchbyParameters(ArrayList<Vehicle> vehicles) {
-
-        SortbyFuelConsumption fuelConsumption = new SortbyFuelConsumption();
-        SortbyCost cost = new SortbyCost();
-
-        Collections.sort(vehicles, fuelConsumption);
-        int i  = Collections.binarySearch(vehicles,new FordBus(1001,7.3,3100,2018),fuelConsumption);
-
-        System.out.println("Найдем машины с расходом топлива 7.3 или стоимостью 4200: ");
-        System.out.println();
-        System.out.println(vehicles.get(i).getClass().getSimpleName() + vehicles.get(i).toString());
-
-        Collections.sort(vehicles, cost);
-        int j = Collections.binarySearch(vehicles,new FordBus(1001,7.3,4200,2018),cost);
-        System.out.println(vehicles.get(j).getClass().getSimpleName() + vehicles.get(j).toString());
+    // Поиск по заданным параметрам (расход топлива и стоимость):
+    static void searchbyParameter(ArrayList<Vehicle> vehicles,double fuelConsumption,int cost) {
+        System.out.println("Найдем все машины с расходом топлива " + fuelConsumption + " и стоимостью " + cost);
+        for (Vehicle v : vehicles) {
+            if (v.getFuelConsumption() == fuelConsumption && v.getCost() == cost) {
+                System.out.println(v.getClass().getSimpleName() + v);
+            }
+        }
     }
 }

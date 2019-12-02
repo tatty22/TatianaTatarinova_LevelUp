@@ -6,7 +6,7 @@ public class YutongBus extends Bus {
     public YutongBus(int orderNumber, double fuelConsumption, int cost, int issueYear) {
 
         super(orderNumber,fuelConsumption,cost,issueYear);
-        fuelType = FuelType.BENZINE;
+        setFuelType(FuelType.BENZINE);
         setDisabledAccess(true);
     }
 }

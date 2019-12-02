@@ -11,7 +11,7 @@ public class TransportParkInterface {
         int cost = 0;
 
         for (Vehicle v : vehicles) {
-            cost =cost + v.getCost();
+            cost += v.getCost();
         }
 
         System.out.println("Общая стоимость автопарка: " + cost + " евро.");

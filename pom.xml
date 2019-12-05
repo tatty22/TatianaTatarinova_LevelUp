@@ -61,7 +61,7 @@
                         <suiteXmlFile>src/test/resources/AllTestSuite.xml</suiteXmlFile>
                         <suiteXmlFile>src/test/resources/MultDivTestSuite.xml</suiteXmlFile>
                         <suiteXmlFile>src/test/resources/ParameterTestSuite.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/resources/SumSubSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/SumSubTestSuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

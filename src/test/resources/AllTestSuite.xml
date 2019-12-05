@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="AllTests">
+    <test name="Все тесты">
+        <classes>
+            <class name="ru.levelup.tatiana.tatarinova.qa.homework_3.SumLongTest" />
+            <class name="ru.levelup.tatiana.tatarinova.qa.homework_3.SubLongTest" />
+            <class name="ru.levelup.tatiana.tatarinova.qa.homework_3.MultLongTest" />
+            <class name="ru.levelup.tatiana.tatarinova.qa.homework_3.DivLongTest" />
+            <class name="ru.levelup.tatiana.tatarinova.qa.homework_3.SumDoubleTest" />
+            <class name="ru.levelup.tatiana.tatarinova.qa.homework_3.SubDoubleTest" />
+            <class name="ru.levelup.tatiana.tatarinova.qa.homework_3.MultDoubleTest" />
+            <class name="ru.levelup.tatiana.tatarinova.qa.homework_3.DivDoubleTest" />
+        </classes>
+    </test>
+</suite>
+

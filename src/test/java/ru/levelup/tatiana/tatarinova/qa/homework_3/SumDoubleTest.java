@@ -8,9 +8,9 @@ public class SumDoubleTest {
 
     private Calculator calculator = new Calculator();
 
-    @Test
+    @Test (groups = { "Sum_Sub" })
     public void testSumDouble() {
-        Assert.assertEquals(3.4,calculator.sum(2.3,1.1));
+        Assert.assertEquals(calculator.sum(2.3,1.1),3.4);
     }
 
 }

@@ -1,0 +1,10 @@
+<suite name="ParameterizedTest">
+    <test name="numbersXML">
+        <parameter name="a" value="2.3"/>
+        <parameter name="b" value="1.1"/>
+        <parameter name="c" value="3.4"/>
+        <classes>
+            <class name="ru.levelup.tatiana.tatarinova.qa.homework_3.ParameterizedTest"/>
+        </classes>
+    </test>
+</suite>

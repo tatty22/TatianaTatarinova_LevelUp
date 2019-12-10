@@ -7,6 +7,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
+import java.util.concurrent.TimeUnit;
+
 public class AbstractBaseTest {
 
     protected WebDriver driver;
@@ -20,6 +22,7 @@ public class AbstractBaseTest {
     public void setUpTest() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
     }
 
     @AfterMethod

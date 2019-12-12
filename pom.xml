@@ -25,6 +25,7 @@
         <version>${testng.version}</version>
         <scope>test</scope>
     </dependency>
+
         <dependency>
             <groupId>com.epam.tat</groupId>
             <artifactId>sample</artifactId>

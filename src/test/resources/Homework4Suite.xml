@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="AllTests">
+    <test name="Homework4">
+        <classes>
+            <class name="ru.levelup.tatiana.tatarinova.qa.homework_4.ex1.UserNameTest" />
+            <class name="ru.levelup.tatiana.tatarinova.qa.homework_4.ex2.TaskCounterTest" />
+            <class name="ru.levelup.tatiana.tatarinova.qa.homework_4.ex3.UserTest" />
+        </classes>
+    </test>
+</suite>

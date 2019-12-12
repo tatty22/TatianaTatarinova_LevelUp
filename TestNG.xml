@@ -2,10 +2,10 @@
 <suite name="AllTests">
     <test name="SumSubMultDiv">
         <classes>
-            <class name="ru.levelup.tatiana.tatarinova.qa.homework_3.SumTest" />
-            <class name="ru.levelup.tatiana.tatarinova.qa.homework_3.SubTest" />
-            <class name="ru.levelup.tatiana.tatarinova.qa.homework_3.MultTest" />
-            <class name="ru.levelup.tatiana.tatarinova.qa.homework_3.DivTest" />
+            <class name="ru.levelup.tatiana.tatarinova.qa.homework_3.SumLongTest" />
+            <class name="ru.levelup.tatiana.tatarinova.qa.homework_3.SubDoubleTest" />
+            <class name="ru.levelup.tatiana.tatarinova.qa.homework_3.MultLongTest" />
+            <class name="ru.levelup.tatiana.tatarinova.qa.homework_3.DivDoubleTest" />
 
         </classes>
     </test>

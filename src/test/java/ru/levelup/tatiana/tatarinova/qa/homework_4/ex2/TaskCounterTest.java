@@ -25,6 +25,7 @@ public class TaskCounterTest extends AbstractBaseTest {
         //Пока не работает (баг):
         //driver.findElement(By.xpath("//a[text()='Добавить задачу']")).click();
 
+        //Проверяем счетчик задач (должен быть установлен в 0):
         WebElement taskCounter = driver.findElement(By.xpath("//a[@href='/tasks/notify/index.html']"));
         assertThat(taskCounter.getText(),containsString("0"));
 

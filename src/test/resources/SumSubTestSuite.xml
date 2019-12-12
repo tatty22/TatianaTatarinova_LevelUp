@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="GroupTests">
+    <test name="Сложение и Вычитание">
+        <groups>
+            <run>
+                <include name="Sum_Sub"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="ru.levelup.tatiana.tatarinova.qa.homework_3"/>
+        </packages>
+    </test>
+</suite>

@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 import ru.levelup.tatiana.tatarinova.qa.homework_4.AbstractBaseTest;
 
 public class UserTest extends AbstractBaseTest {
+
+    //Добавление пользователя (добавление компании не работает на сайте)
     @Test
     public void addUserTest(){
 

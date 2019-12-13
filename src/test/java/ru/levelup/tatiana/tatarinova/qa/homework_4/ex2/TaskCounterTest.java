@@ -12,8 +12,11 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class TaskCounterTest extends AbstractBaseTest {
 
+    //Проверка счетчика задач
     @Test
     public void checkTaskCounterTest(){
+
+        //Входим на сайт
         driver.get("http://users.bugred.ru/");
         driver.findElement(By.xpath("//a//span[text()='Войти']")).click();
 
@@ -21,15 +24,16 @@ public class TaskCounterTest extends AbstractBaseTest {
         driver.findElement(By.name("password")).sendKeys("Qwerty12345");
         driver.findElement(By.xpath("//input[@value='Авторизоваться']")).click();
 
+        //Добавляем задачу
         driver.findElement(By.xpath("//a//span[text()='Задачи']")).click();
         //Пока не работает (баг):
         //driver.findElement(By.xpath("//a[text()='Добавить задачу']")).click();
 
-        //Проверяем счетчик задач (должен быть установлен в 0):
+        //Проверяем счетчик задач (должен быть установлен в 0, т.к. добавление не работает):
         WebElement taskCounter = driver.findElement(By.xpath("//a[@href='/tasks/notify/index.html']"));
         assertThat(taskCounter.getText(),containsString("0"));
 
-
+        //Выходим
         driver.findElement(By.id("fat-menu")).click();
         driver.findElement(By.xpath("//a[text()='Выход']")).click();
 

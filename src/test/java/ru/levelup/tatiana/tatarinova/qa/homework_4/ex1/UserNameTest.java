@@ -1,8 +1,12 @@
 package ru.levelup.tatiana.tatarinova.qa.homework_4.ex1;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import ru.levelup.tatiana.tatarinova.qa.homework_4.AbstractBaseTest;
+import ru.levelup.tatiana.tatarinova.qa.homework_5.pages.HomePage;
+import ru.levelup.tatiana.tatarinova.qa.homework_5.pages.LoginPage;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
@@ -13,21 +17,23 @@ public class UserNameTest extends AbstractBaseTest {
     public void checkUserNameTest() {
         //Проверяем название сайта
         driver.get("http://users.bugred.ru/");
-        assertThat(driver.findElement(By.xpath("//a[@href='http://users.bugred.ru/']")).getText(),equalTo("Users"));
-
+        HomePage homePage = PageFactory.initElements(driver,HomePage.class);
+        assertThat(homePage.getPageTitle(),equalTo("Users"));
+        LoginPage loginPage = new LoginPage(driver);
 
         //Входим на сайт
-        driver.findElement(By.xpath("//a//span[text()='Войти']")).click();
-        driver.findElement(By.name("login")).sendKeys("tatty22@admin.ru");
-        driver.findElement(By.name("password")).sendKeys("Qwerty12345");
-        driver.findElement(By.xpath("//input[@value='Авторизоваться']")).click();
+        homePage.enterButtonClick();
+
+        loginPage.fillLoginTextField("tatty22@admin.ru");
+        loginPage.fillPasswordTextField("Qwerty12345");
+        loginPage.loginButtonClick();
 
         // Проверяем, что имя пользователя в правом верхнем углу корректно:
-        assertThat(driver.findElement(By.id("fat-menu")).getText(),equalTo("tatty22"));
+        assertThat(homePage.getUsername(),equalTo("tatty22"));
 
         //Выходим
-        driver.findElement(By.id("fat-menu")).click();
-        driver.findElement(By.xpath("//a[text()='Выход']")).click();
+        homePage.userButtonClick();
+        homePage.logoutButtonClick();
     }
 
 }

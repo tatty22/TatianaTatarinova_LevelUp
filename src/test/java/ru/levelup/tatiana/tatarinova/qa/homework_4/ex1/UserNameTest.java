@@ -32,7 +32,7 @@ public class UserNameTest extends AbstractBaseTest {
         assertThat(homePage.getUsername(),equalTo("tatty22"));
 
         //Выходим
-        homePage.userButtonClick();
+        homePage.userNameButtonClick();
         homePage.logoutButtonClick();
     }
 

@@ -3,6 +3,8 @@ package ru.levelup.tatiana.tatarinova.qa.homework_5.ex3;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import ru.levelup.tatiana.tatarinova.qa.homework_5.AbstractBaseTest;
+import ru.levelup.tatiana.tatarinova.qa.homework_5.pages.HomePage;
+import ru.levelup.tatiana.tatarinova.qa.homework_5.pages.LoginPage;
 
 public class UserTest extends AbstractBaseTest {
 
@@ -11,26 +13,30 @@ public class UserTest extends AbstractBaseTest {
     public void addUserTest(){
 
         //Входим на сайт
-        driver.get("http://users.bugred.ru/");
-        driver.findElement(By.xpath("//a//span[text()='Войти']")).click();
-        driver.findElement(By.name("login")).sendKeys("tatty22@admin.ru");
-        driver.findElement(By.name("password")).sendKeys("Qwerty12345");
-        driver.findElement(By.xpath("//input[@value='Авторизоваться']")).click();
+        driver.get(configFileReader.getUrl());
+
+        HomePage homePage = new HomePage(driver);
+        LoginPage loginPage = new LoginPage(driver);
+
+        homePage.enterButtonClick();
+        loginPage.fillLoginTextField(configFileReader.getUserName());
+        loginPage.fillPasswordTextField(configFileReader.getPassword());
+        loginPage.loginButtonClick();
 
         //Добавляем пользователя
-        driver.findElement(By.xpath("//a//span[text()='Пользователи']")).click();
-        driver.findElement(By.xpath("//a[text()='Добавить пользователя']")).click();
-        driver.findElement(By.xpath("//input[@name='noibiz_name']")).sendKeys("Михаил Собако");
-        driver.findElement(By.xpath("//input[@name='noibiz_email']")).sendKeys("fff672@mail.ru");
-        driver.findElement(By.xpath("//input[@name='noibiz_password']")).sendKeys("Qwerty12345");
-        driver.findElement(By.xpath("//input[@name='noibiz_birthday']")).sendKeys("22.09.1985");
-        driver.findElement(By.xpath("//select[@name='noibiz_gender']//option[@value='m']")).click();
-        driver.findElement(By.xpath("//input[@name='noibiz_date_start']")).sendKeys("28.11.2019");
-        driver.findElement(By.xpath("//textarea[@name='noibiz_hobby']")).sendKeys("28.11.2019");
-        driver.findElement(By.xpath("//input[@name='act_create']")).click();
+        homePage.usersButtonClick();
+        homePage.addUserButtonClick();
+
+        homePage.getUserComponent().fillNameTextField(configFileReader.getUserName());
+        homePage.getUserComponent().fillEmailTextField(configFileReader.getEmail());
+        homePage.getUserComponent().fillPasswordTextField(configFileReader.getNewPassword());
+        homePage.getUserComponent().fillBirthdayField(configFileReader.getBirthday());
+        homePage.getUserComponent().genderButtonClick();
+        homePage.getUserComponent().fillStartDateField(configFileReader.getstartDate());
+        homePage.getUserComponent().fillHobbyTextField(configFileReader.getHobby());
+        homePage.getUserComponent().createUserButtonClick();
 
         //Выходим
-        driver.findElement(By.id("fat-menu")).click();
-        driver.findElement(By.xpath("//a[text()='Выход']")).click();
+        homePage.logoutButtonClick();
     }
 }

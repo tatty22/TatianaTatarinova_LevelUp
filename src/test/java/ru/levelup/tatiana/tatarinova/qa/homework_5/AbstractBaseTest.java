@@ -6,11 +6,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import ru.levelup.tatiana.tatarinova.qa.homework_5.dataProvider.ConfigFileReader;
 
 import java.util.concurrent.TimeUnit;
 
 public class AbstractBaseTest {
 
+    protected ConfigFileReader configFileReader = new ConfigFileReader();
     protected WebDriver driver;
 
     @BeforeSuite
